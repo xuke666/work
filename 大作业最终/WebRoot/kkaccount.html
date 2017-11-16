@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+	
+    <title>您好 请登录</title>
+	
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css"  type="text/css">
+	
+	<!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+	
+	
+	<!-- Custom Fonts -->
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css"  type="text/css">
+    <link rel="stylesheet" href="fonts/font-slider.css" type="text/css">
+	
+	<!-- jQuery and Modernizr-->
+	<script src="js/jquery-2.1.1.js"></script>
+	
+	<!-- Core JavaScript Files -->  	 
+    <script src="js/bootstrap.min.js"></script>
+	<script>
+	function register(){
+ var password = document.getElementById("password");
+ var repassword = document.getElementById("repassword");
+ var name = document.getElementById("name");
+ var names = document.getElementById("names");
+ var email = document.getElementById("email");
+ var phone = document.getElementById("phone");		
+
+
+ if((password.value==repassword.value)&&((name.value!="")&&(names.value!="")&&(email.value!="")&&(phone.value!=""))){
+ window.alert("注册成功")
+ }else{
+ window.alert("注册失败")
+ }
+}
+
+function fnLogin() {
+    var oUname = document.getElementById("uname")
+    var oUpass = document.getElementById("upass")
+    var isError = true;
+    if (oUname.value.length > 20 || oUname.value.length < 6) {
+		 window.alert("登陆失败，用户名请输入6-20位字符")
+        isError = false;
+        return;
+    }else if((oUname.value.charCodeAt(0)>=48) && (oUname.value.charCodeAt(0)<=57)){
+	window.alert("登陆失败，首字符必须为字母")
+        return;
+    }else for(var i=0;i<oUname.value.charCodeAt(i);i++){
+        if((oUname.value.charCodeAt(i)<48)||(oUname.value.charCodeAt(i)>57) && (oUname.value.charCodeAt(i)<97)||(oUname.value.charCodeAt(i)>122)){
+			window.alert("登陆失败，必须为字母跟数字组成")
+           return;
+        }
+    }
+
+    if (oUpass.value.length > 20 || oUpass.value.length < 6) {
+		window.alert("登陆失败，密码请输入6-20位字符")
+       isError = false;
+        return;
+    }
+    var ret = window.alert("登录成功")
+    if(ret == true){
+	window.location="/kkindex.html"
+	}
+
+}
+	</script>
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body background="20171114124319.jpg">
+	<!--Top-->
+	<nav id="top">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-6">
+				<li><span ></span> 英雄联盟官方售卖网站</a></li>
+					<!--<select class="language">
+						<option value="English" selected>English</option>
+						<option value="France">France</option>
+						<option value="Germany">Germany</option>
+					</select>
+					<select class="currency">
+						<option value="USD" selected>USD</option>
+						<option value="EUR">EUR</option>
+						<option value="DDD">DDD</option>
+					</select>-->
+				</div>
+				<div class="col-xs-6">
+					<ul class="top-link">
+						<li><a href="kkaccount.html"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
+						<!--<li><a href="contact.html"><span class="glyphicon glyphicon-envelope"></span> Contact</a></li>-->
+					</ul>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<!--Header-->
+	<header class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<div id="logo"><img src="images/logo.png" /></div>
+			</div>
+			<div class="col-md-4">
+				<form class="form-search">  
+					<input type="text" class="input-medium search-query">  
+					<button type="submit" class="btn"><span class="glyphicon glyphicon-search"></span></button>  
+				</form>
+			</div>
+			<div class="col-md-4">
+				<div id="cart"><a class="btn btn-1" href="cart.html"><span class="glyphicon glyphicon-shopping-cart"></span>CART : 0 ITEM</a></div>
+			</div>
+		</div>
+	</header>
+	<!--Navigation-->
+  <nav id="menu" class="navbar">
+		<div class="container">
+			<div class="navbar-header"><span id="heading" class="visible-xs">Categories</span>
+			  <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
+			</div>
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav">
+					<li><a target="_blank" href="kkindex.html" ><font color="#FF6633";>主页</font></a></li>
+					
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">商品列表</a>
+						<div class="dropdown-menu">
+							<div class="dropdown-inner">
+								<ul class="list-unstyled">
+									<li><a href="kkcategory.html">英雄</a></li>
+									<li><a href="kkcategory.html">皮肤</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+				
+					
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">周边商城</a>
+						<div class="dropdown-menu">
+							<div class="dropdown-inner">
+								<ul class="list-unstyled">
+									<li><a href="kkshouban.html">雕塑手办</a></li>
+									<li><a href="kkwanou.html">毛绒玩偶</a></li>
+								</ul>
+							</div> 
+						</div>
+					</li>
+					
+					<li><a target="_blank" href="kktuijian.html">精品推荐</a></li>
+					<li><a target="_blank" href="kkproducts.html">活动专区</a></li>
+					
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!--//////////////////////////////////////////////////-->
+	<!--///////////////////Account Page///////////////////-->
+	<!--//////////////////////////////////////////////////-->
+	<div id="page-content" class="single-page">
+		<div class="container">
+			<!--div class="row">
+				<div class="col-lg-12">
+					<ul class="breadcrumb">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="account.html">Account</a></li>
+					</ul>
+				</div-->
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="heading"><h2>登陆</h2></div>
+					<form name="form1" id="ff1" method="post" action="/Dazuoye/servlet/LoginServlet">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Username :" name="username" id="uname" required>
+						</div>
+						<div class="form-group">
+							<input type="password" class="form-control" placeholder="Password :" name="email" id="upass" required>
+						</div>
+						<button type="submit" class="btn btn-1" name="login" id="login" onclick="fnLogin()">Login</button>
+						<a href="#">忘记密码 ?</a>
+					</form>
+				</div>
+				<div class="col-md-6">
+					<div class="heading"><h2>没有账号 ? 创建一个新账号.</h2></div>
+					<form name="form2" id="ff2" method="post" action="http://localhost:8080/Dazuoye/servlet/RegisterServlet">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="First Name :" name="firstname" id="name" required>
+						</div>
+						<div class="form-group">
+							<input type="email" class="form-control" placeholder="Last Name :" name="lastname" id="names" required>
+						</div>
+						<div class="form-group">
+							<input type="tel" class="form-control" placeholder="Email Address :" name="email" id="email" required>
+						</div>
+						<div class="form-group">
+							<input type="tel" class="form-control" placeholder="Mobile :" name="phone" id="phone" required>
+						</div>
+					
+						<div class="form-group">
+							<input type="password" class="form-control" placeholder="Password :" name="password" id="password" required>
+						</div>
+						<div class="form-group">
+							<input type="password" class="form-control" placeholder="Retype Password :" name="repassword" id="repassword" required>
+						</div>
+						<div class="form-group">
+							<input name="agree" id="agree" type="checkbox" > I agree to your website.
+						</div>
+						<button type="submit" class="btn btn-1" name="regisetr" id="regisetr" onclick="register()">Create</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>
